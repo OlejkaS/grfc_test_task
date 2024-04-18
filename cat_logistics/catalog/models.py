@@ -10,7 +10,7 @@ class Category(MPTTModel):
 
     Attributes:
         name (str): Название категории.
-        parent (Optional['Category']): Родительская категория (если она есть).
+        parent (Optional): Родительская категория (если она есть).
     """
     name: str = models.CharField('Название', max_length=50, db_index=True)
     parent: Optional['Category'] = TreeForeignKey(
