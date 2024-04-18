@@ -15,7 +15,7 @@ class CategoryCreateView(CategoryModelMixin, SuccessUrlMixin, CreateView):
     """Представление для создания новой категории.
 
     Attributes:
-        fields (tuple[str]): Поля формы для создания категории (name, parent).
+        fields (tuple): Поля формы для создания категории (name, parent).
     """
 
     fields: tuple[str] = ('name', 'parent')
@@ -27,7 +27,7 @@ class CategoryListView(CategoryModelMixin, ListView):
     Attributes:
         template_name (str): Шаблон для отображения страницы списка категорий.
         context_object_name (str): Имя переменной контекста.
-        extra_context (dict[str, CategoryForm]): Дополнительный контекст для передачи в шаблон.
+        extra_context (dict): Дополнительный контекст для передачи в шаблон.
     """
 
     template_name: str = 'catalog/index.html'
@@ -57,7 +57,7 @@ class CategoryUpdateView(CategoryModelMixin, UpdateView):
     """Представление для обновления категории.
 
     Attributes:
-        fields (tuple[str]): Поля формы для обновления категории (только name).
+        fields (tuple): Поля формы для обновления категории (только name).
     """
 
     fields: tuple[str] = ('name',)
