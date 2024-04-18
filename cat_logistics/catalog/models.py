@@ -4,6 +4,12 @@ from mptt.models import MPTTModel, TreeForeignKey
 
 
 class Category(MPTTModel):
+    """Модель для формирования категорий.
+
+    Attributes:
+        name (str): Название категории.
+        parent (Category): Родительская категория (если она есть).
+    """
     name = models.CharField('Название', max_length=50, db_index=True)
     parent = TreeForeignKey(
         'self',
