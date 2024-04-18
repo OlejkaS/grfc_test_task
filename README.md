@@ -19,7 +19,7 @@
 1. Клонируйте репозиторий:
 
     ```
-    git clone git@github.com:OlejkaS/grfc_test_task.git
+    git clone https://github.com/OlejkaS/grfc_test_task.git
     ```
 2. Перейдите в папку с проектом:
     ```
