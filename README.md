@@ -1,4 +1,4 @@
-# grfc_test_task
+# Catalog Category Project
 
 Веб-сервис для формирования каталога категорий.
 
