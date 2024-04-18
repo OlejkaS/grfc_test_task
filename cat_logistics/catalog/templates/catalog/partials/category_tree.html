@@ -1,0 +1,10 @@
+<li>
+    <a href="{% url 'category_page' category.pk %}">{{ category.name }}</a>
+    {% if category.get_children %}
+        <ul>
+            {% for child in category.get_children %}
+                {% include 'catalog/partials/category_tree.html' with category=child %}
+            {% endfor %}
+        </ul>
+    {% endif %}
+</li>
