@@ -1,8 +1,9 @@
 from typing import Optional
 
 from django.db import models
-
 from mptt.models import MPTTModel, TreeForeignKey
+
+from .constants import MAX_LENGTH_NAME
 
 
 class Category(MPTTModel):
@@ -12,7 +13,11 @@ class Category(MPTTModel):
         name (str): Название категории.
         parent (Optional): Родительская категория (если она есть).
     """
-    name: str = models.CharField('Название', max_length=50, db_index=True)
+    name: str = models.CharField(
+        'Название',
+        max_length=MAX_LENGTH_NAME,
+        db_index=True
+    )
     parent: Optional['Category'] = TreeForeignKey(
         'self',
         on_delete=models.CASCADE,
