@@ -1,0 +1,22 @@
+{% extends "catalog/base.html" %}
+{% block title %}{{ category.name }}{% endblock %}
+{% block content %}
+  <h1>{{ category.name }}</h1>
+  <p>
+    <a href="{% url 'index' %}">Главная</a> /
+      {% for ancestor in category.get_ancestors %}
+        <a href="{% url 'category_page' ancestor.pk %}">{{ ancestor.name }}</a> /
+      {% endfor %}
+      {{ category.name }}
+  </p>
+  <form method="post" action="{% url 'delete_category' category.pk %}">
+    {% csrf_token %}
+    <button type="submit">Удалить эту категорию</button>
+  </form>
+  <div style="height: 10px;"></div>
+  <form method="post" action="{% url 'update_category' category.pk %}">
+    {% csrf_token %}
+    <input type="text" name="name" value="{{ category.name }}">
+    <button type="submit">Изменить название</button>
+  </form>
+{% endblock %}
