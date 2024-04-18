@@ -1,3 +1,5 @@
+from typing import Optional
+
 from django.db import models
 
 from mptt.models import MPTTModel, TreeForeignKey
@@ -8,10 +10,10 @@ class Category(MPTTModel):
 
     Attributes:
         name (str): Название категории.
-        parent (Category): Родительская категория (если она есть).
+        parent (Optional['Category']): Родительская категория (если она есть).
     """
-    name = models.CharField('Название', max_length=50, db_index=True)
-    parent = TreeForeignKey(
+    name: str = models.CharField('Название', max_length=50, db_index=True)
+    parent: Optional['Category'] = TreeForeignKey(
         'self',
         on_delete=models.CASCADE,
         null=True,
@@ -22,11 +24,11 @@ class Category(MPTTModel):
     )
 
     class MPTTMeta:
-        order_insertion_by = ('name',)
+        order_insertion_by: tuple[str] = ('name',)
 
     class Meta:
-        verbose_name = 'Категория'
-        verbose_name_plural = 'Категории'
+        verbose_name: str = 'Категория'
+        verbose_name_plural: str = 'Категории'
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.name
