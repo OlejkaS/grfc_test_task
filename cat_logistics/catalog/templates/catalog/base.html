@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}{% endblock %}</title>
+  <style>
+    ul.tree {
+      list-style-type: none;
+      padding-left: 20px;
+    }
+    ul.tree ul {
+      margin-left: 20px;
+      padding-left: 20px;
+    }
+    .category-form {
+      border: 2px solid #ccc;
+      padding: 10px;
+      margin-top: 20px;
+      display: inline-block;
+    }
+    .category-form h2 {
+      font-size: 16px;
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+  {% block content %}
+  {% endblock %}
+</body>
+</html>
