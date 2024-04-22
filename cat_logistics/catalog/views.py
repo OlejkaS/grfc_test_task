@@ -1,3 +1,4 @@
+from django.db.models.query import QuerySet
 from django.urls import reverse_lazy
 from django.views.generic import (
     CreateView,
@@ -33,6 +34,11 @@ class CategoryListView(CategoryModelMixin, ListView):
     template_name: str = 'catalog/index.html'
     context_object_name: str = 'categories'
     extra_context: dict[str, CategoryForm] = {'form': CategoryForm}
+
+    def get_queryset(self) -> QuerySet:
+        """Получение списка категорий из БД."""
+        queryset: QuerySet = super().get_queryset().select_related('parent')
+        return queryset
 
 
 class CategoryDetailView(CategoryModelMixin, DetailView):
