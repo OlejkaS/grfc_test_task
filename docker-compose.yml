@@ -3,6 +3,7 @@ version: "3"
 services:
   db:
     image: postgres
+    restart: always
     volumes:
       - ./data/db:/var/lib/postgresql/data
     env_file:
@@ -11,6 +12,7 @@ services:
       - app-network
   web:
     build: ./cat_logistics
+    restart: always
     command:
       - bash
       - -c
