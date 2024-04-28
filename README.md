@@ -23,7 +23,6 @@
 Предварительно нужно установить:
 
 - [PostgreSQL 16](https://www.postgresql.org/download/)
-- [Docker](https://www.docker.com/products/docker-desktop/)
 
 ### Процесс установки
 
@@ -76,6 +75,12 @@
    ```
 
 ## Запуск приложения через Docker
+
+Предварительно нужно установить:
+
+- [Docker](https://www.docker.com/products/docker-desktop/)
+
+После установки запустить Docker Desktop.
 
 Для запуска через Docker в файле .env для поля `DB_HOST` установить значение `db`.
 
