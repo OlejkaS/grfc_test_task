@@ -9,12 +9,23 @@
 - [Django MPTT 0.16.0](https://django-mptt.readthedocs.io/en/latest/)
 - [Python dotenv 1.0.1](https://pypi.org/project/python-dotenv/)
 - [Psycopg 2.9.9](https://www.psycopg.org/docs/)
+- [PostgreSQL 16](https://www.postgresql.org/about/news/postgresql-16-released-2715/)
+- [Docker](https://docs.docker.com/)
 
 ## Оформление проекта
 
 В корневой директории находятся файлы схемы базы данных, UML-схемы и SQL-дамп со структурой базы и данными приложения.
 
 ## Установка проекта
+
+### Подготовка
+
+Предварительно нужно установить:
+
+- [PostgreSQL 16](https://www.postgresql.org/download/)
+- [Docker](https://www.docker.com/products/docker-desktop/)
+
+### Процесс установки
 
 1. Клонируйте репозиторий:
 
